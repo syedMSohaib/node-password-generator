@@ -2,8 +2,8 @@ import { SimplePasswordGenerator } from '../index';
 
 const options = {
 	uppercase: false,
-	lowercase: true,
-	numbers: true,
+	lowercase: false,
+	numbers: false,
 	symbols: false,
 	length: 10,
 };
