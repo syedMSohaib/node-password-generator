@@ -1,5 +1,5 @@
 {
-  "name": "password-generator",
+  "name": "node-password-generator",
   "version": "3.0.1",
   "description": "A simple lightweight npm library for password generator",
   "main": "dist/index.js",
