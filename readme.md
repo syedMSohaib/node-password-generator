@@ -39,7 +39,7 @@ let filename = '/usr/share/dictionary.txt';
 
 /*
 
-Dictonary is plain txt file random words
+Dictonary is plain txt file with random words
 
 Aarhus
 Aaron
@@ -99,9 +99,7 @@ Default password length is 10, but it can be override by giving integer value.
 
 
 ### WordsPasswordGenerator({...})
-    filepath: filename,
-    wordcount: 3,       //default word count is 3
-    separator: '_', 
+
 ##### filepath 
 
 Type: `String | required`
