@@ -41,6 +41,10 @@ build/Release
 node_modules/
 jspm_packages/
 
+
+#Testing Folder
+demo/
+
 # TypeScript v1 declaration files
 typings/
 
@@ -67,5 +71,6 @@ typings/
 
 # Transpilation output
 dist
+
 
 .DS_store
