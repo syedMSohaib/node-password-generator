@@ -23,7 +23,7 @@
     "node": ">=14"
   },
   "license": "MIT",
-  "repository": "xxczaki/cashify",
+  "repository": "syedMSohaib/node-password-generator",
   "homepage": "https://github.com/syedMSohaib/node-password-generator",
   "funding": {
     "type": "opencollective",
