@@ -1,3 +1,8 @@
+/**
+ * @param  {string} characterList
+ * @param  {number} length
+ * @returns string
+ */
 export default function passwordRandomizer(
 	characterList: string,
 	length: number,

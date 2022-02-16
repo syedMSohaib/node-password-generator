@@ -27,7 +27,7 @@ export default class WordsPasswordGenerator {
 	 *
 	 * generator.generatePassword(); //=> mystrongpassword
 	 */
-	generatePassword(wordoptions?: Partial<WordOptions>): string {
-		return generate({ ...this.wordoptions, ...wordoptions } as WordOptions);
+	async generatePassword(wordoptions?: Partial<WordOptions>): Promise<string> {
+		return await generate({ ...this.wordoptions, ...wordoptions } as WordOptions);
 	}
 }

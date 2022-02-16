@@ -4,9 +4,18 @@ import passwordRandomizer from './password-randomizer';
 const uppercase_characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const lowercase_characters = 'abcdefghijklmnopqrstuvwxyz';
 const numeric_characters = '0123456789';
-const special_characters = '!@$%^&*()<>,.?/[]{}-=_+';
+const special_characters = '#?!@$%)^&*-';
 const default_length = 10;
 
+/**
+ * @param  {} {uppercase
+ * @param  {} lowercase
+ * @param  {} numbers
+ * @param  {} symbols
+ * @param  {} length
+ * @param  {Options} }
+ * @returns string
+ */
 export default function generate({
 	uppercase,
 	lowercase,

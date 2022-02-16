@@ -9,7 +9,7 @@
 $ npm install node-password-generator
 ```
 
-## Usage
+## Simple Password Generator Usage
 
 ```js
 import { SimplePasswordGenerator } from 'node-password-generator';
@@ -29,9 +29,41 @@ const password = generator.generatePassword();
 console.log(password); //=> "YourPassword"
 ```
 
+## Words Password Generator Usage
+
+```js
+
+import { WordsPasswordGenerator } from 'node-password-generator';
+
+let filename = '/usr/share/dictionary.txt';
+
+/*
+
+Dictonary is plain txt file random words
+
+Aarhus
+Aaron
+Ababa
+aback
+abaft
+abandon
+abandoned
+
+*/
+
+const wordGenerator = new WordsPasswordGenerator({
+    filepath: filename,
+    wordcount: 3,       //default word count is 3
+    separator: '_',     //to join words default is empty string
+});
+
+const wordPassword = await wordGenerator.generatePassword();
+
+console.log('wordPassword', wordPassword); //=> "random_password_generator"
+
+```
 
 ## OPTIONS
-
 
 ### SimplePasswordGenerator({...})
 
@@ -64,6 +96,29 @@ When true, the password will contain special characters
 Type: `Number | optional`
 
 Default password length is 10, but it can be override by giving integer value.
+
+
+### WordsPasswordGenerator({...})
+    filepath: filename,
+    wordcount: 3,       //default word count is 3
+    separator: '_', 
+##### filepath 
+
+Type: `String | required`
+
+Complete file path of dictonary file
+
+##### wordcount
+
+Type: `wordcount | optional`
+
+Default word length is 3, & Minimum length is 1, but it can be override by giving integer value.
+
+##### separator
+
+Type: `string | optional`
+
+To join multiple words, Default separator is empty string, but it can be override by giving character/string value.
 
 
 ## Contributing

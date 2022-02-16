@@ -5,22 +5,32 @@ let password: string[] = [];
 
 const MIN_WORD_COUNT = 3;
 
-function generatePassword(
+/**
+ * @param  {} {filename
+ * @param  {} wordCount
+ * @param  {} seprator
+ * @param  {{filename:string} }
+ * @param  {number} wordCount
+ * @param  {string} seprator
+ * @param  {} }
+ * @returns Promise
+ */
+function generatePassword({
+	filename,
+	wordCount,
+	seprator,
+}: {
 	filename: string,
 	wordCount: number,
 	seprator: string,
-): Promise<string> {
-	const p = new Promise<string>((resolve, reject) => {
+}): Promise<string> {
+	return new Promise<string>((resolve, reject) => {
 		fs.readFile(filename, 'utf-8', function (err: any, data: any) {
 			if (err) {
 				reject(err);
 				throw err;
 			}
-
-			// note: this assumes `data` is a string - you may need
-			//       to coerce it - see the comments for an approach
 			var lines = data.split('\n');
-			// choose one of the lines...
 			for (let i = 0; i < wordCount; i++) {
 				let line = lines[Math.floor(Math.random() * lines.length)];
 				password.push(line);
@@ -29,38 +39,33 @@ function generatePassword(
 			resolve(password.join(seprator));
 		});
 	});
-
-	return p;
 }
-
-async function returnPassword(
-	path: string,
-	wordcount: number,
-	separator: string,
-): Promise<string> {
-	const p = await generatePassword(path, wordcount, separator);
-	console.log(p);
-	return p;
-}
-
-const generate = function generate({
+/**
+ * @param  {} {filepath
+ * @param  {} wordcount
+ * @param  {} separator
+ * @param  {WordOptions} }
+ * @returns Promise
+ */
+const generate = async function generate({
 	filepath,
 	wordcount,
 	separator,
-}: WordOptions): string {
+}: WordOptions): Promise<string> {
 	/**
 	 * Building Password
 	 */
 
-	let password = returnPassword(
-		filepath,
-		wordcount ? wordcount : MIN_WORD_COUNT,
-		separator ? separator : '',
-	);
+	if (wordcount == 0)
+		throw new Error('Minimum `wordcount` should atleast be 1 ');
 
-	console.log('password', password, Promise.resolve(password));
+	let password = await generatePassword({
+		filename: filepath,
+		wordCount: wordcount ? wordcount : MIN_WORD_COUNT,
+		seprator: separator ? separator : '',
+	});
 
-	return Promise.resolve(password).toString();
+	return password;
 };
 
 export default generate;
