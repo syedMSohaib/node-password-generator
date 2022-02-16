@@ -29,7 +29,19 @@
     "type": "opencollective",
     "url": "https://opencollective.com/passwordgenerator"
   },
-  "keywords": [],
+  "keywords": [
+    "generate",
+    "password",
+    "node-password",
+    "wordlist",
+    "unique-password",
+    "password-generator",
+    "random",
+    "random-password",
+    "security",
+    "typescript",
+    "node"    
+  ],
   "devDependencies": {
     "@types/jest": "^27.4.0",
     "jest": "^27.5.1",
