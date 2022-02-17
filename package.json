@@ -1,7 +1,7 @@
 {
   "name": "node-password-generator",
-  "version": "1.0.0",
-  "description": "A simple lightweight npm library for password generator",
+  "version": "1.0.1",
+  "description": "A simple lightweight npm library for password generator. It allows you to create random unqiue password on the fly.",
   "main": "dist/index.js",
   "type": "module",
   "types": "dist/index.d.ts",
